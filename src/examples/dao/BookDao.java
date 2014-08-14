@@ -36,7 +36,7 @@ public interface BookDao {
 
     public static final String findByCategoryPagerCondition_QUERY = "ORDER BY ID";
     
-    public Book findByName(String name);
+    public Book findByCode(int MaSach);
     
     public List getAllBook();
 

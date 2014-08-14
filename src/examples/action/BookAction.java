@@ -2,7 +2,10 @@
 package examples.action;
 
 
+import java.io.Console;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.seasar.framework.container.annotation.tiger.Binding;
 import org.seasar.framework.container.annotation.tiger.BindingType;
@@ -20,13 +23,24 @@ import examples.service.BookService;
 public class BookAction {
 
     @StrutsActionForward
-    public static final String DETAIL = "/bookdetail.jsp";
+    public static final String DETAIL = "/detail.jsp";
     
     private Book books;
 	private List<Book> book;
+	private HttpServletRequest res;
 
 	BookService bookservice;
-    private BookForm bookForm;
+  
+    
+	public HttpServletRequest getRes() {
+		return res;
+	}
+
+
+	public void setRes(HttpServletRequest res) {
+		this.res = res;
+	}
+
     public Book getBooks() {
 		return books;
 	}
@@ -53,13 +67,11 @@ public class BookAction {
 	}
 	
 
-    public void setBookForm(BookForm bookForm) {
-        this.bookForm = bookForm;
-    }
-	
     public String goDetail() {
     	 
-    	books = bookservice.findByName(bookForm.getTensach()) ;
+    	int bookCode = Integer.parseInt(res.getParameter("masach"));
+    	books = bookservice.findByCode(bookCode) ;
+    	res.setAttribute("book", books);
         return DETAIL;
     }
 }

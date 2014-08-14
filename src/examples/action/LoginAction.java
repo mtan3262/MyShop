@@ -2,10 +2,13 @@ package examples.action;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.seasar.framework.container.annotation.tiger.Binding;
 import org.seasar.framework.container.annotation.tiger.BindingType;
 import org.seasar.struts.annotation.tiger.StrutsAction;
 import org.seasar.struts.annotation.tiger.StrutsActionForward;
+
 
 
 import examples.dto.Book;
@@ -22,37 +25,28 @@ public class LoginAction {
 	public static final String FAILURE = "/login.jsp";
 	
 	private LoginForm loginForm;
-	private BookForm bookForm;
 	private List<Book> book;
-	public void setBookForm(BookForm bookForm) {
-		bookForm = bookForm;
-	}
-
-
-
+	@Resource
+	private LoginService loginService;
+	@Resource
+	private BookService	bookService;
 
 	public BookService getBookService() {
 		return bookService;
 	}
 
-	public void setBookService(BookService bookService) {
-		this.bookService = bookService;
-	}
-
-
-
-
-	private LoginService loginService;
-	private BookService	bookService;
-
-    @Binding(bindingType = BindingType.MUST)
-	public void setLoginService(LoginService loginService) {
-		this.loginService = loginService;
-	}
-
 	public void setAddForm(LoginForm loginForm) {
         this.loginForm = loginForm;
     }
+
+	public List<Book> getBook() {
+		return book;
+	}
+
+	public void setBook(List<Book> book) {
+		this.book = book;
+	}
+
     
     
 	
@@ -73,13 +67,5 @@ public class LoginAction {
     		return FAILURE;
     	}
     }
-
-	public List<Book> getBook() {
-		return book;
-	}
-
-	public void setBook(List<Book> book) {
-		this.book = book;
-	}
 
 }

@@ -16,7 +16,7 @@ public interface BookService {
 	    
 	    public List<Book> getAllBook();
 	    
-	    public Book findByName(String name);
+	    public Book findByCode(int MaSach);
 //	    public List findByCategoryPagerCondition(CategoryPagerCondition dto);
 
 }

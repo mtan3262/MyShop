@@ -2,6 +2,8 @@ package examples.service.impl;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.seasar.framework.container.annotation.tiger.Binding;
 import org.seasar.framework.container.annotation.tiger.BindingType;
@@ -12,13 +14,11 @@ import examples.form.LoginForm;
 import examples.service.LoginService;
 
 public class LoginServiceImpl implements LoginService {
-
+	
+	@Resource
 	private CustomerDao customerDao;
 	
-	@Binding(bindingType = BindingType.MUST)
-	public void setCustomerDao(CustomerDao customerDao) {
-		this.customerDao = customerDao;
-	}
+	
 
 	@Override
 	public Boolean CheckLogin(LoginForm login) {

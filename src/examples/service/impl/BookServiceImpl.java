@@ -2,6 +2,8 @@ package examples.service.impl;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.seasar.framework.container.S2Container;
 import org.seasar.framework.container.annotation.tiger.Binding;
 import org.seasar.framework.container.annotation.tiger.BindingType;
@@ -12,16 +14,8 @@ import examples.dto.Book;
 import examples.service.BookService;
 
 public class BookServiceImpl implements BookService {
-	
+	@Resource
 	private BookDao bookDao;
-	
-	
-	
-	
-	@Binding(bindingType = BindingType.MUST)
-	public void setBookDao(BookDao bookDao) {
-		this.bookDao = bookDao;
-	}
 
 	@Override
 	public List<Book> getAllBook() {
@@ -29,20 +23,16 @@ public class BookServiceImpl implements BookService {
 		return bookDao.getAllBook();
 	}
 
-
-	
-
-
 	@Override
 	public String getName(int empno) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
-	public Book findByName(String name) {
+	public Book findByCode(int MaSach) {
 		
-		return bookDao.findByName(name);
+		return bookDao.findByCode(MaSach);
 	}
 
 

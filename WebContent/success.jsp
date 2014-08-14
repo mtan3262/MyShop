@@ -1,10 +1,7 @@
 <tiles:insert beanName="main">
   <tiles:put name="title" value="LoginSuccess" />
   <tiles:put name="body" type="string">
- 
-    <bean:define id="form" name="loginForm" />
-    
-    <table class="tablebg" border=1>
+ 	 <table class="tablebg" border=1>
     <tr class="label">
       <th>Tên sách</th>
       <th>Giá sách</th>
@@ -14,13 +11,13 @@
         <td ><c:out value="${e.tensach}" /></td>
         <td ><c:out value="${e.giasach}" /></td>
         <td>
-          	<s2struts:link action="@(bookAction.goDetail}" cancel="true" paramName="e" paramProperty="tensach"><bean:message key="button.edit" /></s2struts:link>
+        	<form action="book.do">
+        		<input name="masach" value="${e.masach}" style="visibility: hidden; width: 5px;height: 0px;">
+          		<s2struts:submit action="@(bookAction.goDetail}" value="Chi tiết"></s2struts:submit>
+          	</form>
         </td>
       </tr>
     </c:forEach> 
      </table>
   </tiles:put>
-  
-    
- 
 </tiles:insert>
