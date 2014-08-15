@@ -1,2 +1,1 @@
-<bean:define id="form" name="loginForm" />
-     <bean:write name="form" property="username"/> Số sách mua: , tổng tiền
+<h3>Hi ${user}, tổng sách: ${tongsach}, tổng tiền: ${tongtien} </h3>

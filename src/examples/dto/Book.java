@@ -15,6 +15,7 @@
  */
 package examples.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import org.seasar.dao.annotation.tiger.Bean;
@@ -26,21 +27,26 @@ import org.seasar.dao.annotation.tiger.Bean;
  */
 
 @Bean(table = "Sach")
-public class Book {
+public class Book implements Serializable{
 
-   
-    
- 
-    
+	private String maloai;
     private String tensach;
     private int giasach;
-    private String masach;
+    private int masach;
     private String tacgia;
     private int soluong;
-    public String getMasach() {
+    private String tenloai;
+    
+    public String getTenloai() {
+		return tenloai;
+	}
+	public void setTenloai(String tenloai) {
+		this.tenloai = tenloai;
+	}
+	public int getMasach() {
 		return masach;
 	}
-	public void setMasach(String masach) {
+	public void setMasach(int masach) {
 		this.masach = masach;
 	}
 	public String getTacgia() {
@@ -61,7 +67,7 @@ public class Book {
 	public void setMaloai(String maloai) {
 		this.maloai = maloai;
 	}
-	private String maloai;
+
 	public String getTensach() {
 		return tensach;
 	}

@@ -1,13 +1,18 @@
 package examples.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
-import org.seasar.framework.container.annotation.tiger.Binding;
-import org.seasar.framework.container.annotation.tiger.BindingType;
 import org.seasar.struts.annotation.tiger.StrutsAction;
 import org.seasar.struts.annotation.tiger.StrutsActionForward;
+
+
+
+
+
 
 
 
@@ -24,12 +29,34 @@ public class LoginAction {
 	@StrutsActionForward
 	public static final String FAILURE = "/login.jsp";
 	
-	private LoginForm loginForm;
-	private List<Book> book;
+
 	@Resource
 	private LoginService loginService;
 	@Resource
 	private BookService	bookService;
+
+	private LoginForm loginForm;
+	private List<Book> book;
+	private List<Book> listbook;
+
+
+	 public List<Book> getListbook() {
+		return listbook;
+	}
+
+	public void setListbook(List<Book> listbook) {
+		this.listbook = listbook;
+	}
+
+	public void setBook(List<Book> book) {
+		}
+
+	private HttpServletRequest req;
+	
+
+	public void setReq(HttpServletRequest req) {
+		this.req = req;
+	}
 
 	public BookService getBookService() {
 		return bookService;
@@ -39,26 +66,25 @@ public class LoginAction {
         this.loginForm = loginForm;
     }
 
-	public List<Book> getBook() {
-		return book;
-	}
+   
 
-	public void setBook(List<Book> book) {
-		this.book = book;
-	}
 
-    
-    
-	
-    
-    public String execute()
+
+	public String execute()
     {
-    	//String username = loginForm.getUsername();
-    	//loginService.CheckLogin(loginForm);
+    	
     	if(loginService.CheckLogin(loginForm))
     		{
-    	
+
+    			req.getSession().setAttribute("listbook", null);
+    			req.getSession().setAttribute("user", loginForm.getUsername());
+    			req.getSession().setAttribute("tongsach", 0);
+    			req.getSession().setAttribute("tongtien", 0);
+    			
+    			////////////////////////
+    			
     			book = bookService.getAllBook();
+    			System.out.println("=======HELLO=======");
     			return SUCCESS;
     		}
     	else{
@@ -67,5 +93,16 @@ public class LoginAction {
     		return FAILURE;
     	}
     }
+    
+    public String goHome()
+    {
+    	book = bookService.getAllBook();
+    			return SUCCESS;
+    	
+    }
+
+	public List<Book> getBook() {
+		return book;
+	}
 
 }

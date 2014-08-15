@@ -71,6 +71,7 @@ public class BookAction {
     	 
     	int bookCode = Integer.parseInt(res.getParameter("masach"));
     	books = bookservice.findByCode(bookCode) ;
+    	books.setTenloai(bookservice.findTypeBook(bookCode));
     	res.setAttribute("book", books);
         return DETAIL;
     }

@@ -35,6 +35,18 @@ public class BookServiceImpl implements BookService {
 		return bookDao.findByCode(MaSach);
 	}
 
+	@Override
+	public String findTypeBook(int MaSach) {
+		// TODO Auto-generated method stub
+		return bookDao.findTypeBook(MaSach);
+	}
+
+	@Override
+	public void updateBook(int MaSach) {
+		// TODO Auto-generated method stub
+		bookDao.updateBook(MaSach);
+	}
+
 
 
 

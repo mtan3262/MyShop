@@ -17,6 +17,10 @@ public interface BookService {
 	    public List<Book> getAllBook();
 	    
 	    public Book findByCode(int MaSach);
+	    
+	    public String findTypeBook(int MaSach);
+	    
+	    public void updateBook(int MaSach);
 //	    public List findByCategoryPagerCondition(CategoryPagerCondition dto);
 
 }

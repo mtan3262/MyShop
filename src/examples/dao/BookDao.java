@@ -25,7 +25,7 @@ import org.seasar.dao.annotation.tiger.*;
 /**
  * BookDao
  * 
- * @author Toshitaka Agata(Nulab,inc.)
+ * @author Cao.Tan
  */
 @S2Dao(bean = Book.class)
 public interface BookDao {
@@ -37,6 +37,10 @@ public interface BookDao {
     public static final String findByCategoryPagerCondition_QUERY = "ORDER BY ID";
     
     public Book findByCode(int MaSach);
+    
+    public String findTypeBook(int MaSach);
+    
+    public void updateBook(int MaSach);
     
     public List getAllBook();
 

@@ -1,5 +1,5 @@
 <tiles:insert beanName="main">
-  <tiles:put name="title" value="LoginSuccess" />
+  <tiles:put name="title" value="Book Shop Home" />
   <tiles:put name="body" type="string">
  	 <table class="tablebg" border=1>
     <tr class="label">
