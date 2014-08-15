@@ -23,7 +23,7 @@ import examples.service.BookService;
 public class BookAction {
 
     @StrutsActionForward
-    public static final String DETAIL = "/detail.jsp";
+    public static final String DETAIL = "/bookDetail.jsp";
     
     private Book books;
 	private List<Book> book;

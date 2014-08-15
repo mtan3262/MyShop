@@ -1,6 +1,6 @@
-<tiles:insert beanName="main">
-  <tiles:put name="title" value="Book Shop Home" />
-  <tiles:put name="body" type="string">
+<html>
+<title></title>
+<body>
  	 <table class="tablebg" border=1>
     <tr class="label">
       <th>Tên sách</th>
@@ -19,5 +19,5 @@
       </tr>
     </c:forEach> 
      </table>
-  </tiles:put>
-</tiles:insert>
+     </body>
+</html>

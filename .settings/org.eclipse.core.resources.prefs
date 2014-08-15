@@ -1,9 +1,10 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/view/common/detail.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/common/finish.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/common/header.jsp=UTF-8
-encoding//WebContent/WEB-INF/view/common/menu.jsp=UTF-8
-encoding//WebContent/detail.jsp=UTF-8
-encoding//WebContent/invoice.jsp=UTF-8
-encoding//WebContent/success.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/common/invoice.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/common/success.jsp=UTF-8
+encoding//WebContent/login.jsp=UTF-8
 encoding//src/examples/dao/BookDao.java=UTF-8
 encoding//src/examples/dao/BookDao_findByCode.sql=UTF-8
 encoding/<project>=UTF-8

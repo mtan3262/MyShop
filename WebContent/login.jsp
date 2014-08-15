@@ -1,11 +1,23 @@
 <html>
 <head></head>
 <body>
+<table>
   <html:form action="/login">
     <bean:define id="form" name="loginForm" />
-    <html:text property="username" styleClass="text" errorStyleClass="text-error" /><br> 
-    <html:text property="password" styleClass="text" errorStyleClass="text-error" /><br>
-    <s2struts:submit action="@{loginAction.execute}">login</s2struts:submit>
+    <tr>
+    <td>Tên khách hàng:</td>
+    <td><html:text property="username" styleClass="text" errorStyleClass="text-error"  /></td>
+    </tr>
+     <tr>
+     <td>Mật khẩu:</td>
+     <td><html:text property="password" styleClass="text" errorStyleClass="text-error" /></td>
+     </tr>
+	<tr>
+	<td></td>
+	<td> <s2struts:submit action="@{loginAction.execute}">Đăng nhập</s2struts:submit></td>
+	</tr>
+   
   </html:form>
+  </table>
   </body>
 </html>

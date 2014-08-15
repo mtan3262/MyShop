@@ -25,7 +25,7 @@ import examples.service.LoginService;
 public class LoginAction {
 	
 	@StrutsActionForward
-    public static final String SUCCESS = "/success.jsp";
+    public static final String SUCCESS = "/bookHome.jsp";
 	@StrutsActionForward
 	public static final String FAILURE = "/login.jsp";
 	

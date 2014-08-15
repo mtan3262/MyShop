@@ -8,31 +8,15 @@
 </head>
 
 <body>
-<table border="0" cellspacing="5" width="97%">
-<tr>
-  <td colspan="2">
+	<div class="header">
     <tiles:insert attribute="header" />
-  </td>
-</tr>
-<tr>
-  <td width="200" valign="top">
-    <tiles:insert attribute="menu" />
-  </td>
-  <td valign="top" align="left">
-    <html:errors/>
+	</div>
+	
+ 	<div class="body" style="text-align: center; margin-left: 400px">
     <tiles:insert attribute="body" />
-  </td>
-</tr>
-<tr>
-  <td colspan="2">
-    <hr/>
-  </td>
-</tr>
-<tr>
-  <td colspan="2">
+</div>
+	<div class="footer">
     <tiles:insert attribute="footer" />
-  </td>
-</tr>
-</table>
+  </div>
 </body>
 </html>

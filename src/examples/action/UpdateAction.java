@@ -18,7 +18,7 @@ public class UpdateAction {
 	
 
     @StrutsActionForward
-    public static final String UPDATE = "/finish.jsp";
+    public static final String UPDATE = "/bookFinish.jsp";
     
     List<Book> book;
     List<Book> listBook;

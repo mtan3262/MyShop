@@ -21,7 +21,7 @@ import examples.service.BookService;
 public class BuyAction {
 
 	@StrutsActionForward
-    public static final String INVOICE = "/invoice.jsp";
+    public static final String INVOICE = "/bookInvoice.jsp";
 	
 	Book book;
 
