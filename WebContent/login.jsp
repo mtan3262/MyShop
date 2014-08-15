@@ -1,5 +1,5 @@
 <html>
-<head></head>
+<head><title>Login</title></head>
 <body>
 <table>
   <html:form action="/login">
