@@ -1,5 +1,9 @@
 package examples.service.impl;
-
+/**
+*Dịch vụ kiểm tra hợp lệ khi login
+*@author Cao.Tan
+*@version 1.0	 
+*/
 import java.util.List;
 
 import javax.annotation.Resource;

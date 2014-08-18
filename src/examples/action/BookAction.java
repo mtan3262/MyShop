@@ -16,8 +16,9 @@ import examples.dto.Book;
 import examples.service.BookService;
 
 /**
- * @author taedium
- * 
+ *Xử lý các hành động để chuyển người dùng sang trong chi tiết sách 
+ *@author Cao.Tan
+ *@version 1.0	 
  */
 @StrutsAction(input = BookAction.DETAIL)
 public class BookAction {
@@ -66,13 +67,22 @@ public class BookAction {
 		this.bookservice = bookService;
 	}
 	
-
+    /**
+     * Các xử lý trước khi đưa người dùng đến trang chi tiết sách
+     * 
+     */
     public String goDetail() {
-    	 
+    	 /** Biến bookCode để lấy mã sách cần xem chi tiết dựa trên parameter masach của request*/
     	int bookCode = Integer.parseInt(res.getParameter("masach"));
+    	/** books là biến của class Book, dựa vào mã sách phía trên ta truy vấn xuống DB để lấy cuốn sách cần xem chi tiết*/
     	books = bookservice.findByCode(bookCode) ;
+    	
+    	//Dựa vào mã sách trong bảng sách, ta lấy tên loại sách trong bảng loại sách
     	books.setTenloai(bookservice.findTypeBook(bookCode));
+    	
+    	//Trả về quyển sách đã lấy lên từ DB và đi tới màn hình chi tiết sách
     	res.setAttribute("book", books);
+    	res.setAttribute("error", "vẫn còn hàng");
         return DETAIL;
     }
 }

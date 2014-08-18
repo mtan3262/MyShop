@@ -3,6 +3,8 @@
 	<tr>
 		<th>Tên sách</th>
 		<th>Giá sách</th>
+		<th>Số lượng mua</th>
+		<th>Tổng tiền</th>
 		
 		</tr>
 	<tbody>
@@ -10,6 +12,8 @@
       <tr >
         <td class="text"><c:out value="${e.tensach}" /></td>
         <td class="number"><c:out value="${e.giasach}" /></td>
+        <td class="number"><c:out value="${e.soluongmua}" /></td>
+        <td class="number"><c:out value="${e.tongtienmua}" /></td>
         </tr>
 		</c:forEach> 
 	</tbody>

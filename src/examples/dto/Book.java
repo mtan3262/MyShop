@@ -1,18 +1,4 @@
-/*
- * Copyright 2004-2010 the Seasar Foundation and the Others.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
- * either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
+
 package examples.dto;
 
 import java.io.Serializable;
@@ -21,14 +7,28 @@ import java.sql.Date;
 import org.seasar.dao.annotation.tiger.Bean;
 
 /**
- * 書�?クラス
- * 
- * @author Toshitaka Agata(Nulab,inc.)
+ *Các field của sách trong cơ sở dữ liệu và các field khác khi người dùng mua sách  
+ *@author Cao.Tan
+ *@version 1.0	 
  */
 
 @Bean(table = "Sach")
 public class Book implements Serializable{
 
+	private int soluongmua;
+	private int tongtienmua;
+	public int getTongtienmua() {
+		return tongtienmua;
+	}
+	public void setTongtienmua(int tongtienmua) {
+		this.tongtienmua = tongtienmua;
+	}
+	public int getSoluongmua() {
+		return soluongmua;
+	}
+	public void setSoluongmua(int soluongmua) {
+		this.soluongmua = soluongmua;
+	}
 	private String maloai;
     private String tensach;
     private int giasach;

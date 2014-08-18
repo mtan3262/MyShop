@@ -1,7 +1,11 @@
 package examples.dto;
 
 import org.seasar.dao.annotation.tiger.Bean;
-
+/**
+ *Các field trong bảng khách hàng
+ *@author Cao.Tan
+ *@version 1.0	 
+ */
 @Bean(table = "KhachHang")
 public class Customer {
 	

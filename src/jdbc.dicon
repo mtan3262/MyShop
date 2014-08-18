@@ -33,7 +33,7 @@
 			<!--
 			"jdbc:hsqldb:hsql://localhost:9001"
 			-->
-			"jdbc:postgresql://localhost:5432/myshop"
+			"jdbc:postgresql://localhost:5432/myshoponline"
 			<!--"jdbc:hsqldb:file:" 
 				+ @org.seasar.framework.util.ResourceUtil@getBuildDir(@examples.pager.Book@class).getAbsolutePath() 
 				+ "/data/demo"-->

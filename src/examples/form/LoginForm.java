@@ -2,6 +2,11 @@ package examples.form;
 
 import org.seasar.struts.annotation.tiger.StrutsActionForm;
 
+/**
+*
+*@author Cao.Tan
+*@version 1.0	 
+*/
 @StrutsActionForm
 public class LoginForm {
 	

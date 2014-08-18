@@ -23,9 +23,9 @@ import examples.dto.Book;
 import org.seasar.dao.annotation.tiger.*;
 
 /**
- * BookDao
- * 
- * @author Cao.Tan
+ *Thao tác với bảng sách trong cơ sở dữ liệu  
+ *@author Cao.Tan
+ *@version 1.0	 
  */
 @S2Dao(bean = Book.class)
 public interface BookDao {
@@ -40,10 +40,11 @@ public interface BookDao {
     
     public String findTypeBook(int MaSach);
     
+   
     public void updateBook(int MaSach);
     
     public List getAllBook();
 
-    //public List findByCategoryPagerCondition(CategoryPagerCondition dto);
+   
 
 }

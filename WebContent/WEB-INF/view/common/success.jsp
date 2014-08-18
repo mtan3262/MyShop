@@ -1,6 +1,4 @@
-<html>
-<title></title>
-<body>
+
  	 <table class="tablebg" border=1>
     <tr class="label">
       <th>Tên sách</th>
@@ -19,5 +17,4 @@
       </tr>
     </c:forEach> 
      </table>
-     </body>
-</html>
+
